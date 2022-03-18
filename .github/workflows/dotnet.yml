@@ -56,6 +56,6 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       shell: powershell
       run: |
-        .\.sonar\scanner\dotnet-sonarscanner begin /k:"rcamison_MDAS_MDS_HelloWorld" /o:"damianraul" /d:sonar.login="0adee2b9c27cd3a4cb94151885633862a80e7fbf" /d:sonar.host.url="https://sonarcloud.io"
+        .\.sonar\scanner\dotnet-sonarscanner begin /k:"rcamison_MDAS_MDS_HelloWorld" /o:"damianraul" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
         dotnet build
-        .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="0adee2b9c27cd3a4cb94151885633862a80e7fbf"
+        .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
