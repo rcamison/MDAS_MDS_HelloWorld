@@ -36,12 +36,12 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal --filter Type!=Acceptance /p:CollectCoverage=true /p:CoverletOutputFormat=OpenCover /p:CoverletOutput=TestResults/
+      run: dotnet test --no-build --verbosity normal --filter Type!=Acceptance /p:CollectCoverage=true /p:CoverletOutputFormat=OpenCover /p:CoverletOutput=TestReport/
     - name: Prepare coverage report
-      run: mv tests/HelloWorldTests/TestResults/coverage.opencover.xml opencover.xml      
+      run: mv tests/HelloWorldTests/TestReport/coverage.opencover.xml opencover.xml      
     - name: Sonarscanner End
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}      
       run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"   
-      
+       
