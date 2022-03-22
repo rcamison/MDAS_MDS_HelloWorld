@@ -1,0 +1,19 @@
+version: '3.6'
+
+services:
+
+ damianraul.helloworld:
+    image: damianraul.helloworld
+    container_name: helloworld
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "3080:80" 
+      - "3443:443"
+    networks:
+      - helloworld  
+
+networks:
+    helloworld:
+        driver: bridge
