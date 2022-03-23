@@ -55,4 +55,4 @@ jobs:
     - name: Tag
       run: docker tag damianraul.helloworld:latest damianraul.helloworld:$(date +%s)
     - name: Docker push
-      run: docker push $DOCKER_USER/damianraul.helloworld:latest
+      run: docker push ${{secrets.DOCKER_USER}}/damianraul.helloworld:latest
