@@ -53,6 +53,6 @@ jobs:
     - name: Build the Docker image
       run: docker compose build
     - name: Tag
-      run: docker tag damianraul.helloworld:latest damianraul.helloworld:${{ env.GITHUB_SHA }}
+      run: docker tag damianraul.helloworld:latest damianraul.helloworld:$(date +%s)
     - name: Docker push
       run: docker push damianraul.helloworld:latest
