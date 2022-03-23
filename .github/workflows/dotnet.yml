@@ -53,4 +53,4 @@ jobs:
     - name: Build the Docker image
       run: docker compose build
     - name: Docker push
-      run: docker compose tag --template lasallercamison/mdas/helloworld:$(date +%s) --push  
+      run: docker push damianraul/mdas-mds-helloworld:$(date +%s)
