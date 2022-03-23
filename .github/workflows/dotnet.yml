@@ -52,6 +52,5 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
       run: docker compose build
-    - name: Docker Push
-      run: docker compose push
-      
+    - name: Docker push
+      run: docker compose tag --template lasallercamison/mdas/helloworld:$(date +%s) --push  
