@@ -53,6 +53,6 @@ jobs:
     - name: Build the Docker image
       run: docker compose build
     - name: Tag
-      run: docker tag damianraul.helloworld:latest lasallercamison/mdas:damianraul$(date +%s)
+      run: docker tag damianraul.helloworld:latest lasallercamison/mdas:${{ github.run_id }}
     - name: Docker push
-      run: docker push lasallercamison/mdas
+      run: docker push lasallercamison/mdas:${{ github.run_id }}
