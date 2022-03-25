@@ -30,7 +30,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: dotnet sonarscanner begin /k:"rcamison_MDAS_MDS_HelloWorld" /o:"damianraul" /d:sonar.cs.opencover.reportsPaths="opencover.xml" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+      run: dotnet sonarscanner begin /k:"rcamison_MDAS_MDS_HelloWorld" /o:"damianraul" /d:sonar.cs.opencover.reportsPaths="opencover.xml" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.qualitygate.wait=true /d:sonar.host.url="https://sonarcloud.io"
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
