@@ -78,7 +78,7 @@ jobs:
       - name: Get docker image
         run: docker pull lasallercamison/mdas:${{ github.run_id }}
       - name: Setup Acceptance tests
-        run: docker run --name helloworld -d -p 3080:80 lasallercamison/mdas:${{ github.run_id }}'
+        run: docker run --name helloworld -d -p 3080:80 lasallercamison/mdas:${{ github.run_id }}
       - name: Run Acceptance tests
         run: dotnet test --filter Type==Acceptance   
       - name: Deploy to Azure Web App
