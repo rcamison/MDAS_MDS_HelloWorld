@@ -65,6 +65,10 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
+      - name: Get sources
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis    
       - name: Setup Acceptance tests
         run: docker compose up -d --no-build       
       - name: Run Acceptance tests
