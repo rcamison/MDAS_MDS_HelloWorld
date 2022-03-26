@@ -3,7 +3,7 @@ version: '3.6'
 services:
 
  lasallercamison/mdas:
-    image: lasallercamison/mdas
+    image: damianraul.helloworld
     container_name: helloworld
     build:
       context: .
