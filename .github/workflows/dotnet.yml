@@ -89,4 +89,4 @@ jobs:
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           images: 'lasallercamison/mdas:${{ github.run_id }}'
       - name: Post Setup Acceptance tests
-        run: docker compose down               
+        run: docker kill helloworld               
