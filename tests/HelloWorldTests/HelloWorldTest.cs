@@ -23,6 +23,6 @@ public class HelloWorldTest
 
         //Then
         Assert.True(response.IsSuccessStatusCode);
-        Assert.Equal(message, "Hello World");
+        Assert.Equal("Hello World", message);
     }
 }
