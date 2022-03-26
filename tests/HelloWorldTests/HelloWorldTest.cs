@@ -8,7 +8,7 @@ public class HelloWorldTest
     private static HttpClient client = new HttpClient();
 
     [Fact, Trait("Type", "Acceptance")]
-    private void Should_Get_A_Pokemon_By_Its_Id()
+    public async void Should_Get_GreetingMessage()
     {
         //Given
         HttpClient httpClient = new HttpClient();
@@ -19,8 +19,10 @@ public class HelloWorldTest
 
         //When
         var response = httpClient.SendAsync(request).GetAwaiter().GetResult();
+        var message = await response.Content.ReadAsStringAsync();
 
         //Then
         Assert.True(response.IsSuccessStatusCode);
+        Assert.Equal(message, "Hello World");
     }
 }
