@@ -12,7 +12,7 @@ public class HelloWorldTest
     {
         //Given
         HttpClient httpClient = new HttpClient();
-        string getUrl = "http://helloworld:3080/helloworld";
+        string getUrl = "http://localhost:3080/helloworld";
         client.DefaultRequestHeaders.Accept.Clear();
         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, getUrl);
