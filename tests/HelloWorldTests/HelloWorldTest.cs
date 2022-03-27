@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Headers;
+using HelloWorldApi.Shared;
 using Xunit;
 
 namespace HelloWorldTests;
@@ -23,6 +24,6 @@ public class HelloWorldTest
 
         //Then
         Assert.True(response.IsSuccessStatusCode);
-        Assert.Equal("Hello World", message);
+        Assert.Equal(Constants.ApiMessage, message);
     }
 }

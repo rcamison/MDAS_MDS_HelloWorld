@@ -1,10 +1,12 @@
-﻿namespace HelloWorldApi.UseCases
+﻿using HelloWorldApi.Shared;
+
+namespace HelloWorldApi.UseCases
 {
     public class GetGreetingUseCase
     {
         public string Execute()
         {
-            return "Hello World";
+            return Constants.ApiMessage;
         }
     }
 }
