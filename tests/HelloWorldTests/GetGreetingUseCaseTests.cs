@@ -1,3 +1,4 @@
+using HelloWorldApi.Shared;
 using Xunit;
 using HelloWorldApi.UseCases;
 
@@ -12,7 +13,7 @@ namespace HelloWorldTests
 
             var result = getGreetingUseCase.Execute();
 
-            Assert.Equal("Hello World", result);
+            Assert.Equal(Constants.ApiMessage, result);
         }
     }
 }
