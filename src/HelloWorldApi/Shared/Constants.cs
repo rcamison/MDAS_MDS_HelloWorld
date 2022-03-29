@@ -2,5 +2,5 @@
 
 public static class Constants
 {
-    public const string ApiMessage = "Buenas tardes";
+    public const string ApiMessage = "Buenas noches";
 }
